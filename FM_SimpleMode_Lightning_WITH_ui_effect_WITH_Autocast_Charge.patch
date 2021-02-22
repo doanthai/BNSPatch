@@ -1,0 +1,137 @@
+FileName = xml[bit].dat.files\\skill3_contextscriptdata_forcemaster_contextsimplemode.xml
+
+// context-1= LMB
+// context-2= RMB
+// context-3= F
+// skillbar-1= 1
+// skillbar-2= 2
+// skillbar-3= 3
+// skillbar-4= 4
+// skillbar-5= Z
+// skillbar-6= X
+// skillbar-7= C
+// skillbar-8= V
+// stance= TAB
+// cmd-key-right= E
+// cmd-key-left= Q
+// cmd-key-down= SS
+// special-1= G
+// special-2= B
+
+// --------------------------------------------------------------------------
+
+// [Have to be placed before the Trip Wire (F) change]
+
+// Add Charge (0 - 4 stacks) on (V)
+// Autocast Charge (0 - 4 stacks) on (V)
+
+Search = <result context-3="133050" control-mode="bns" skillbar-ui-effect="event" />NewLine            </decision>NewLine          </layer>
+Replace = <result context-3="133050" control-mode="bns" skillbar-ui-effect="event" />NewLine            </decision>NewLine          </layer> <layer> <decision> <condition skill="133100" /> <result skillbar-8="133100" control-mode="classic" key-status="unpress" skillbar-ui-effect="event" /> <result skillbar-8="133100" control-mode="bns" key-status="unpress" skillbar-ui-effect="event" /> </decision> </layer>
+
+// --------------------------------------------------------------------------
+
+// [Have to be placed after the Volt Salvo simple mode remove]
+
+// Autocast Volt Salvo
+// Move Volt Salvo from (F) to (V)
+
+Search = <condition skill="133200" />
+Replace = <condition field="job-style-only" job-style="advanced-3" />
+Search = <result context-3="133200" control-mode="classic" skillbar-ui-effect="event" />
+Replace = <result skillbar-8="133200" control-mode="classic" key-status="unpress" skillbar-ui-effect="event" />
+Search = <result context-3="133200" control-mode="bns" skillbar-ui-effect="event" />
+Replace = <result skillbar-8="133200" control-mode="bns" key-status="unpress" skillbar-ui-effect="event" />
+
+// --------------------------------------------------------------------------
+
+// Autocast Magnetize (4) in Stormborn
+
+Search = <result control-mode="bns" skillbar-8="133232" skillbar-ui-effect="event" />NewLine           </decision>NewLine         </layer>
+Replace = <result control-mode="bns" skillbar-8="133232" skillbar-ui-effect="event" />NewLine           </decision>NewLine         </layer> <layer> <decision> <condition field="job-style-only" job-style="advanced-3" /> <result control-mode="classic" skillbar-4="133071" key-status="unpress" skillbar-ui-effect="event" /> <result control-mode="bns" skillbar-4="133071" key-status="unpress" skillbar-ui-effect="event" /> </decision> </layer>
+
+// --------------------------------------------------------------------------
+
+// Autocast Lightning Strike in Stormborn
+
+Search = <result control-mode="bns" skillbar-8="133232" skillbar-ui-effect="event" />NewLine           </decision>NewLine         </layer>
+Replace = <result control-mode="bns" skillbar-8="133232" skillbar-ui-effect="event" />NewLine           </decision>NewLine         </layer> <layer> <decision> <condition field="job-style-only" job-style="advanced-3" /> <result control-mode="classic" skillbar-6="133162" key-status="unpress" skillbar-ui-effect="event" /> <result control-mode="bns" skillbar-6="133162" key-status="unpress" skillbar-ui-effect="event" /> </decision> </layer>
+
+// --------------------------------------------------------------------------
+
+// Move Storm Warp from (LMB) to (E) in Stormborn (only forward)
+// This removes all the side dash from (LMB)
+
+Search = <condition combination-key-command-1="strafe-left" skill="133466" />
+Replace = 
+Search = <condition combination-key-command-2="move-forward" skill="133460" />
+Replace = 
+Search = <result context-1="133467" control-mode="classic" skillbar-ui-effect="event" />
+Replace = 
+Search = <result context-1="133467" control-mode="bns" skillbar-ui-effect="event" />
+Replace = 
+
+Search = <condition combination-key-command-1="strafe-left" skill="133466" />
+Replace = 
+Search = <condition combination-key-command-2="move-backward" skill="133464" />
+Replace = 
+Search = <result context-1="133465" control-mode="classic" skillbar-ui-effect="event" />
+Replace = 
+Search = <result context-1="133465" control-mode="bns" skillbar-ui-effect="event" />
+Replace = 
+
+Search = <condition combination-key-command-1="move-backward" skill="133464" />
+Replace = 
+Search = <condition combination-key-command-2="strafe-right" skill="133462" />
+Replace = 
+Search = <result context-1="133463" control-mode="classic" skillbar-ui-effect="event" />
+Replace = 
+Search = <result context-1="133463" control-mode="bns" skillbar-ui-effect="event" />
+Replace = 
+
+Search = <condition combination-key-command-1="strafe-right" skill="133462" />
+Replace = 
+Search = <condition combination-key-command-2="move-forward" skill="133460" />
+Replace = 
+Search = <result context-1="133461" control-mode="classic" skillbar-ui-effect="event" />
+Replace = 
+Search = <result context-1="133461" control-mode="bns" skillbar-ui-effect="event" />
+Replace = 
+
+Search = <condition combination-key-command-1="move-forward" skill="133460" />
+Replace = 
+Search = <result context-1="133460" control-mode="classic" skillbar-ui-effect="event" />
+Replace = 
+Search = <result context-1="133460" control-mode="bns" skillbar-ui-effect="event" />
+Replace = 
+
+Search = <condition combination-key-command-1="strafe-right" skill="133462" />
+Replace = 
+Search = <result context-1="133462" control-mode="classic" skillbar-ui-effect="event" />
+Replace = 
+Search = <result context-1="133462" control-mode="bns" skillbar-ui-effect="event" />
+Replace = 
+
+Search = <condition combination-key-command-1="move-backward" skill="133464" />
+Replace = 
+Search = <result context-1="133464" control-mode="classic" skillbar-ui-effect="event" />
+Replace = 
+Search = <result context-1="133464" control-mode="bns" skillbar-ui-effect="event" />
+Replace = 
+
+Search = <condition combination-key-command-1="strafe-left" skill="133466" />
+Replace = 
+Search = <result context-1="133466" control-mode="classic" skillbar-ui-effect="event" />
+Replace = 
+Search = <result context-1="133466" control-mode="bns" skillbar-ui-effect="event" />
+Replace = 
+
+// --------------------------------------------------------------------------
+
+// Fix a typo in the original XML where Awakened Lightning Palm (RMB) would probably not trigger when having 0 - 4 stacks (need to double check)
+
+Search = <result comtext-2="133010" control-mode="classic" skillbar-ui-effect="event" />
+Replace = <result context-2="133010" control-mode="classic" skillbar-ui-effect="event" />
+Search = <result comtext-2="133010" control-mode="bns" skillbar-ui-effect="event" />
+Replace = <result context-2="133010" control-mode="bns" skillbar-ui-effect="event" />
+
+Description = (By Vectoriel) [Disable Glacier (B), Pulse Break (Z), High Voltage (C), Spark Up (C)] [Macro TB] || Check : https://hackmd.io/O0YUxikESaaPOgXr0XuDWA
